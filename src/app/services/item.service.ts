@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ItemService {
-  private readonly base = `${environment.apiBaseUrl}/items`;
+  private readonly base = `${environment.apiBaseUrl}/api/v1/items`;
   constructor(private readonly http: HttpClient) {}
 
   getAll(): Observable<Item[]> {
