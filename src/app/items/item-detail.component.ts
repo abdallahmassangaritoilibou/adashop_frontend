@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ItemService } from './services/item.service';
-import { Item } from './models/item';
+import { ItemService } from '../services/item.service';
+import { Item } from '../models/item';
 
 @Component({
   selector: 'app-item-detail',

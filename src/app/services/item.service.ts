@@ -4,10 +4,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Item } from '../models/item';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ItemService {
-  private readonly base = '/items';
+  private readonly base = `${environment.apiBaseUrl}/items`;
   constructor(private readonly http: HttpClient) {}
 
   getAll(): Observable<Item[]> {
