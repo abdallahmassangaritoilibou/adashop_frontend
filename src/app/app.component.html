@@ -1,4 +1,9 @@
 <!-- src\app\app.component.html -->
 
 <p-toast position="top-right"></p-toast>
-<router-outlet />
+
+<div class="p-2">
+  <p-button label="Toggle Dark Mode" (onClick)="toggleDarkMode()"></p-button>
+</div>
+
+<router-outlet></router-outlet>

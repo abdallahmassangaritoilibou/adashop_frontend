@@ -15,10 +15,11 @@ import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { ApiInterceptor } from './app/core/api.interceptor';
 import { AuthService } from './app/core/auth.service';
+import { appConfig } from './app/app.config';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(ToastModule), // for <p-toast>
+    importProvidersFrom(ToastModule), // for <prime-toast>
     provideHttpClient(
       withInterceptorsFromDi(), // look for HTTP_INTERCEPTORS
     ),
@@ -28,6 +29,7 @@ bootstrapApplication(AppComponent, {
       useClass: ApiInterceptor,
       multi: true,
     },
+    ...appConfig.providers,
     MessageService,
     AuthService,
     provideRouter(routes),
