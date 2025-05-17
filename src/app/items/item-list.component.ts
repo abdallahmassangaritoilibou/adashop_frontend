@@ -3,22 +3,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CardModule } from 'primeng/card';
 import { ItemService } from '../services/item.service';
 import { Item } from '../models/item';
 
 @Component({
   selector: 'app-item-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
-  template: `
-    <h2>Items</h2>
-    <ul>
-      <li *ngFor="let it of items">
-        <a [routerLink]="['/items', it.id]">{{ it.name }}</a>
-      </li>
-    </ul>
-    <button routerLink="/items/new">New Item</button>
-  `,
+  imports: [CommonModule, RouterModule, CardModule],
+  templateUrl: './item-list.component.html',
+  styleUrl: './item-list.component.css',
 })
 export class ItemListComponent implements OnInit {
   items: Item[] = [];
