@@ -1,6 +1,6 @@
 <!-- src\app\items\item-list.component.html -->
 
-<div class="grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 lg:grid-cols-3">
+<div class="grid flex-1 grid-cols-1 gap-6 p-4 sm:grid-cols-2 lg:grid-cols-3">
   <p-card
     *ngFor="let it of items"
     header="{{ it.name }}"
@@ -10,16 +10,5 @@
     <p *ngIf="it.description" class="m-0 mb-4">
       {{ it.description }}
     </p>
-
-    <!-- footer template for actions -->
-    <ng-template pTemplate="footer">
-      <button
-        pButton
-        type="button"
-        label="View Details"
-        class="w-full"
-        [routerLink]="['/items', it.id]"
-      ></button>
-    </ng-template>
   </p-card>
 </div>
